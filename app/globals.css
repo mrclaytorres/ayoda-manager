@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-surface: oklch(0.19 0.02 265);
+  --color-surface-2: oklch(0.24 0.02 265);
+  --color-line: oklch(0.32 0.02 265);
+  --color-ink: oklch(0.97 0.005 265);
+  --color-ink-dim: oklch(0.72 0.015 265);
+  --color-accent: oklch(0.72 0.16 60);
+  --color-danger: oklch(0.65 0.19 25);
+  --color-good: oklch(0.72 0.15 150);
+}
+
+html,
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  /* SC-008: nothing scrolls sideways on a 360px screen. */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* FR-047: 44px is the floor for anything a thumb has to hit. */
+button,
+[role='button'],
+a.tap,
+input[type='submit'] {
+  min-height: 44px;
+}
